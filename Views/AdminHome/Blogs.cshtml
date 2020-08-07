@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Online_Learning.Models.CourseMaterial>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Blogs</title>
+    <h2>Blogs</h2>
+</head>
+<body>
+    <table class="table" border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cours.CourseName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileLink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cours.CourseName)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.MaterialID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaterialID })
+                </td>
+            </tr>
+        }
+        <ul id="menu">
+            <li>@Html.ActionLink("Logout", "Logout/", "Login") |
+            @Html.ActionLink("Back", "AdminDashboard/", "Login")</li>
+            </ul>
+    </table>
+</body>
+</html>

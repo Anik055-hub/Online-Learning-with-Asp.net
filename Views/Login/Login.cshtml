@@ -1,0 +1,40 @@
+﻿@model Online_Learning.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>You have to login first.</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="container">
+            <label for="Username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="Username" required>
+            <br />
+            <label for="Password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="Password" required>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Login" class="btn btn-default" />
+                    @Html.ActionLink("Back", "Index/", "Home")
+                </div>
+            </div>
+        </div>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@model Online_Learning.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AdminDashboard</title>
+</head>
+<body>
+    <aside>
+        <nav>
+            <ul id="menu">
+                <li>@Html.ActionLink("Profile", "ProfileInfo/", "AdminHome")</li>
+                <li>@Html.ActionLink("Students List", "Students/", "AdminHome")</li>
+                <li>@Html.ActionLink("Teachers List", "Teachers/", "AdminHome")</li>
+                <li>@Html.ActionLink("All Courses", "Courses/", "AdminHome")</li>
+                <li>@Html.ActionLink("Blog/Video", "Blogs/", "AdminHome")</li>
+                <li>@Html.ActionLink("Message", "Messages/", "AdminHome")</li>
+            </ul>
+        </nav>
+    </aside>
+    <ul id="menu">
+        <li>
+            @Html.ActionLink("Logout", "Logout/", "Login")
+    </li>
+</ul>
+</body>
+</html>

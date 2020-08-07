@@ -1,0 +1,38 @@
+﻿@model Online_Learning.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h1>Online Learning System</h1>
+        <aside>
+            <nav>
+                <ul id="menu">
+                    @*IMPLEMENT THE LINK Home, Order, Cart and ConctactUs
+                        Home Action method: Index Controller: Home
+                        Order Action method: Index Controller: Order
+                        Cart Action method: List Controller: Cart
+                        Contact Us Action method: Contact Controller: Home
+                    *@
+                    <li>@Html.ActionLink("Home", "Index/", "Home")</li>
+                    <li>@Html.ActionLink("Login", "Login/", "Login")</li>
+                    <li>@Html.ActionLink("Register", "SignUp/", "Login")</li>
+                    <li>@Html.ActionLink("Contact Us", "Contact/", "Home")</li>
+                </ul>
+            </nav>
+        </aside>
+    }
+    </body>
+</html>
